@@ -8,6 +8,11 @@ header {
   align-items: baseline;
   padding: 20px 32rem;
   border-bottom: 2px dashed @navigation-border;
+  @media @mobile {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+  }
 }
 .home {
   // section {
@@ -19,6 +24,9 @@ header {
     flex-wrap: wrap;
     justify-content: space-between;
     margin-bottom: 20px;
+    @media @mobile {
+      justify-content: center;
+    }
     .intro {
       padding: 20px 0;
       margin-bottom: 20px;
@@ -28,18 +36,25 @@ header {
     .text-content {
       width: 48%;
       padding-right: 1%;
+      .full-width();
     }
 
     .img-content {
       width: 48%;
       padding-left: 1%;
+      order: 2;
+      .full-width();
 
       img {
         border-radius: 10px;
+        .full-width();
       }
     }
     .fun-bus-img {
       width: 100%;
+    }
+    @media @mobile {
+      padding: 0 20px;
     }
   }
   // header,
@@ -66,7 +81,7 @@ header {
   .content-destination {
     width: 75%;
     margin: 0 auto 30px;
-
+    .full-width(90%);
     img {
       border-radius: 10px;
     }
@@ -77,10 +92,19 @@ header {
     border-top: 2px dashed @navigation-border;
     display: flex;
     justify-content: space-between;
-
+    @media @mobile {
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 7rem;
+    }
     .destination {
       width: 30%;
       margin-bottom: 30px;
+      .full-width(100%);
+    }
+    button {
+      .custom-button();
+      .full-width();
     }
   }
 } // home
